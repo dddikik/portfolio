@@ -1,0 +1,420 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+body .box {
+  position: absolute;
+  height: 150%;
+  width: 150%;
+  left: -30%;
+
+  display: block;
+
+  background-color: rgb(35, 35, 75);
+
+  transform-origin: left;
+  animation: coverAnimation 2s;
+  animation-fill-mode: forwards;
+
+  z-index: 10000000;
+
+  overflow: hidden;
+}
+
+body {
+  background-color: black; 
+}
+
+header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: black;
+  color: white;
+
+  height: 5vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  padding: 0 50px;
+}
+
+header h1 {
+  opacity: 0;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav p {
+  padding-left: 30px;
+  opacity: 0;
+}
+
+main {
+  padding-top: 5vh;
+
+  opacity: 1;
+}
+
+main .mainpage {
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+main .mainpage::before {
+  height: 100%;
+  width: 100%;
+  content: "";
+  background: url(../img/main.jpg);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  opacity: 0.5;
+}
+
+main span {
+  font-size: 80px;
+  font-weight: 800;
+  color: white;
+  opacity: 0;
+  text-align: center;
+}
+
+@keyframes coverAnimation {
+  0% {
+    transform: scaleX(1) skewX(30deg);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(0) skewX(30deg);
+    transform-origin: left;
+  }
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+}
+
+main .about {
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: url(../img/space.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+main .about::after {
+  height: 95vh;
+  width: 100%;
+  content: "";
+  position: absolute;
+
+  z-index: -1;
+  opacity: 0.5;
+}
+
+main .about .warpper {
+  width: 70vw;
+}
+
+main .about .introduce {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+main .about .picture {
+  top: 20vh;
+  width: 20vh;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+main .about h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+
+  text-align: center;
+  padding: 0 auto 3rem;
+}
+
+main .about .introduceText h3 {
+  padding: 1rem;
+}
+
+main .aboutBase {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-around;
+
+  padding-top: 2rem;
+  row-gap: 3rem;
+}
+
+main .aboutBase li {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1.3rem;
+}
+
+main .aboutBase li .imgbox {
+  width: 48px;
+  height: 48px;
+  font-size: 40px;
+  text-align: center;
+}
+
+main .aboutBase li h3 {
+  font-size: 1 rem;
+  font-weight: 500;
+  letter-spacing: 0.8;
+}
+
+main .aboutBase li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main .aboutBase li a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+
+main .project {
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+main .project::after {
+  height: 95vh;
+  width: 100%;
+  content: "";
+  position: absolute;
+
+  z-index: -1;
+  opacity: 0.5;
+}
+
+main .project .warpper {
+  height: 80vh;
+  width: 55vw;
+}
+
+main .project h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+main .project .projectSlider {
+  display: flex;
+}
+
+main .project .projectPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+
+  background-color: white;
+  border-radius: 1rem;
+}
+
+main .project .projectPage .projcetTitle {
+  font-size: 2rem;
+  padding-top: 1rem;
+
+  color: skyblue;
+}
+
+main .project .projectPage .projectWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: space-around;
+  font-size: 1rem;
+  color: black;
+
+  padding: 0 2rem;
+}
+
+main .project .projectPage .projectImg {
+  padding: 1rem;
+}
+
+main .project .projectPage .projectImg h4 {
+  padding: 1rem 0;
+  background-color: rgb(230, 230, 230);
+}
+
+main .project .projectPage img {
+  width: 25vw;
+  height: 25vh;
+}
+
+main .project .projectText {
+  width: 25vw;
+
+  padding: 1rem;
+}
+
+main .project .projectText p {
+  font-size: 0.9rem;
+  text-align: left;
+  line-height: 1.2rem;
+
+  color: black;
+
+  padding-bottom: 1rem;
+}
+
+main .project .projectText p + p {
+  border-top: 1px solid grey;
+
+  padding: 1rem 0;
+}
+
+main .skill {
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+  background: url(../img/space2.jpg);
+  background-position: center;
+  background-size: cover;
+
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+main .skill::after {
+  height: 95vh;
+  width: 100%;
+  content: "";
+ 
+  position: absolute;
+
+  z-index: -1;
+  opacity: 0.5;
+}
+
+main .skill .warpper {
+  height: 80vh;
+  width: 60vw;
+}
+
+main .skill h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+main .skill .skillImg {
+  height: 60vh;
+
+  border-radius: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: space-around;
+}
+
+main .skill .skillImgBox {
+  background-color: white;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.2s linear;
+}
+
+main .skill .skillImgBox:hover {
+  transform: scale(1.05);
+}
+
+main .skill .skillImgBox h3 {
+  color: grey;
+
+  border-bottom: 2px solid grey;
+  padding: 1rem;
+}
+
+main .skill .skillImgBox img {
+  width: 20vw;
+  padding-top: 1rem;
+  border-radius: 1rem;
+}
+
+main .skill .controlImgBox {
+  background-color: white;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.2s linear;
+}
+
+main .skill .controlImgBox:hover {
+  transform: scale(1.05);
+}
+
+main .skill .controlImgBox h3 {
+  color: grey;
+
+  border-bottom: 2px solid grey;
+  padding: 1rem;
+}
+
+main .skill .controlImgBox img {
+  width: 20vw;
+  padding: 1rem 1rem 0 1rem;
+  border-radius: 1rem;
+}
